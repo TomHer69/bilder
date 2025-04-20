@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bildwechsel mit Button</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+          <div>
+            <div id="bild-container">
+                <img id="bild" src="bild1.jpg" alt="Bild">
+            </div>
+            <br>
+            <button onclick="bildWechsel()">Bild wechseln</button>
+        </div>
+
+  
+
+    <script>
+        const bilder = [
+            '1.jpg',
+            '2.jpg',
+            '3.jpg',
+            '4.jpg',
+            '5.jpg'
+        ];
+
+        let aktuellesBild = 0;
+        const bildElement = document.getElementById('bild');
+        bildElement.src = bilder[0];
+
+        function bildWechsel() {
+            aktuellesBild = (aktuellesBild + 1) % bilder.length;
+            bildElement.src = bilder[aktuellesBild];
+        }
+
+        let aktuellesBild1 = 0;
+        const bildElement1 = document.getElementById('bild1');
+        bildElement1.src = bilder[0];
+
+        function bildWechsel1() {
+            aktuellesBild1 = (aktuellesBild1 + 1) % bilder.length;
+            bildElement1.src = bilder[aktuellesBild1];
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
